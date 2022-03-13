@@ -3,10 +3,10 @@
 # different dirs on different hosts:
 case $(hostname) in
   merz-nimbus)
-    cd /home/thomas/Documents/Administration/dnspingtest_rrd.$(hostname)/ || exit 1
+    cd /home/thomas/Documents/Administration/dnspingtest_rrd."$(hostname)"/ || exit 1
     ;;
   ubuntu-cx11-02|ubuntu-cx11-03)
-    cd ~/dev/dnspingtest_rrd.$(hostname)/ || exit 1
+    cd ~/dev/dnspingtest_rrd."$(hostname)"/ || exit 1
     ;;
   *)
     exit 1
@@ -18,9 +18,10 @@ COUNT=4
 DEADLINE=10
 
 dnsping_host() {
-    local output=$($PING -q -c $COUNT -w $DEADLINE -s $1 nextwurz.mooo.com 2>&1)
+    output="$($PING -q -c $COUNT -w $DEADLINE -s "$1" nextwurz.mooo.com 2>&1)"
+    local output
     # notice $output is quoted to preserve newlines
-    local temp=$(echo "$output"| awk '
+    temp=$(echo "$output"| awk '
         BEGIN           {pl=100; rtt=0.1}
         /requests transmitted/   {
             match($0, /([0-9]+)% lost/, matchstr)
@@ -38,7 +39,7 @@ dnsping_host() {
         }
         END         {print pl ":" rtt}
         '|cut -d"=" -f2)
-    RETURN_VALUE=$temp
+    RETURN_VALUE="$temp"
 }
 
 # dnsping some hosts for some dns resolvers:
@@ -55,7 +56,7 @@ for resolvers in 45.90.28.39 45.90.30.39 1.1.1.1 1.0.0.1 8.8.8.8 8.8.4.4 208.67.
       dnsping_$resolvers.rrd \
       --template \
       pl:rtt \
-      N:$RETURN_VALUE
+      N:"$RETURN_VALUE"
   # https://forum.syncthing.net/t/why-are-rrd-files-transferred-by-time-and-not-immediately/16391
   touch dnsping_$resolvers.rrd
 done
