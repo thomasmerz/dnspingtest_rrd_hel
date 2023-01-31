@@ -8,10 +8,10 @@ This project implement a nice monitoring of average response times of DNS resolv
 - all-in-one for each DNS resolver.  
 
 📈 **Or use the direct links to my dashboards:**  
-- [Dashboard for yesterday](https://thomasmerz.github.io/dnspingtest_rrd_ka/dashboard_day.html)
-- [Dashboard for the last seven days](https://thomasmerz.github.io/dnspingtest_rrd_ka/dashboard_week.html)
-- [Dashboard for the month](https://thomasmerz.github.io/dnspingtest_rrd_ka/dashboard_month.html)
-- [Dashboard for the year](https://thomasmerz.github.io/dnspingtest_rrd_ka/dashboard_year.html)
+- [Dashboard for yesterday](https://thomasmerz.github.io/dnspingtest_rrd_hel/dashboard_day.html)
+- [Dashboard for the last seven days](https://thomasmerz.github.io/dnspingtest_rrd_hel/dashboard_week.html)
+- [Dashboard for the month](https://thomasmerz.github.io/dnspingtest_rrd_hel/dashboard_month.html)
+- [Dashboard for the year](https://thomasmerz.github.io/dnspingtest_rrd_hel/dashboard_year.html)
 
 ⚠️  All data is currently updated on a daily base at 3am.
 
