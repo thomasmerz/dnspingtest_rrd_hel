@@ -15,7 +15,7 @@ esac
 
 PING=/usr/bin/dnsping
 COUNT=4
-DEADLINE=10
+DEADLINE=5
 
 dnsping_host() {
     output="$($PING -q -c $COUNT -w $DEADLINE -s "$1" nextwurz.mooo.com 2>&1)"
