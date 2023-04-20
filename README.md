@@ -17,7 +17,6 @@ This project implement a nice monitoring of average response times of DNS resolv
 
 These DNS resolvers are currently monitored:
 ```
-# dnsping some hosts for some dns resolvers:
 # dns1.nextdns.io 45.90.28.39
 # dns2.nextdns.io 45.90.30.39
 # Google (ECS, DNSSEC);8.8.8.8;8.8.4.4;2001:4860:4860:0:0:0:0:8888;2001:4860:4860:0:0:0:0:8844
@@ -29,7 +28,6 @@ These DNS resolvers are currently monitored:
 # "Die DNS-Server vom CCC (213.73.91.35) und Digitalcourage e.V. (85.214.20.141) empfehle ich nicht, da diese Server kein DNSSEC zur Validierung nutzen."
 # Der CCC listet "seinen" eigenen/o.g. DNS-Server selber nicht mehr auf seiner Seite: https://www.ccc.de/censorship/dns-howto/ -- Offline/Down/ABN?!
 # 46.182.19.48 (Digitalcourage)
-# 194.150.168.168 (AS250.net)  -- doesn't work at hetznerc/cloud/non-enduser-provider
 # --
 # 5.1.66.255 Freifunk München zensurfrei, DNSSEC
 # 185.150.99.255 Freifunk München zensurfrei, DNSSEC
@@ -44,6 +42,7 @@ These DNS resolvers are currently monitored:
 # 95.215.19.53 Njalla  unzensiert (Njalla ist ein privacy-fokusierter, schwedischer Domain-, Hosting- und VPN-Provider)
 # 185.253.5.0 193.110.81.0 DNS0.EU
 # 193.110.81.9 185.253.5.9 DNS0.EU ZERO
+# 76.76.2.38 76.76.2.39 free DNS resolvers to immediately start using 1Hosts
 ```
 
 ⚠️  If you want to know what the following **scripts** are doing and how to integrate into your **crontab**, please have a look in [https://github.com/thomasmerz/dnspingtest_rrd](https://github.com/thomasmerz/dnspingtest_rrd)!
