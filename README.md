@@ -50,8 +50,6 @@ These DNS resolvers are currently monitored:
 ```
 01_dnsping.sh
 02_dnsping-graph.sh
-98_create_html.sh
-98_create_rrd.sh
 ```
 
 Have fun!
