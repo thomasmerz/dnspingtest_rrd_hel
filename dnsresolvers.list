@@ -31,6 +31,7 @@
 # 185.253.5.0 193.110.81.0 DNS0.EU
 # 193.110.81.9 185.253.5.9 DNS0.EU ZERO
 # 76.76.2.38 76.76.2.39 free DNS resolvers to immediately start using 1Hosts
+# 185.236.104.104 and 185.236.105.105 = FlashStart Malware- und Inhaltsfilter-Testversion (Private)
 # --
 45.90.28.39
 45.90.30.39
@@ -67,3 +68,5 @@ localhost
 185.253.5.9
 76.76.2.38
 76.76.2.39
+185.236.104.104
+185.236.105.105
