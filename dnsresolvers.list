@@ -33,6 +33,10 @@
 # 86.54.11.1 joindns.eu4 Protective Resolution
 # 86.54.11.13 joindns.eu4 Protective + Ad blocking
 # 86.54.11.100 joindns.eu4 Unfiltered Resolution
+# https://dns01.eddns.eu/
+# dns01.eddns.eu: 135.181.207.105
+# dns02.eddns.de: 89.58.62.53
+# dns03.eddns.eu: 138.199.237.109
 # --
 45.90.28.39
 45.90.30.39
@@ -70,3 +74,6 @@ localhost
 86.54.11.1
 86.54.11.13
 86.54.11.100
+135.181.207.105
+89.58.62.53
+138.199.237.109
