@@ -16,13 +16,15 @@ esac
 
 PING=dnsping
 COUNT=4
-DEADLINE=2
+DEADLINE=1
 tcp=
+tls=
+doh=
 
 dnsping_host() {
     # Double quote to prevent globbing and word splitting. [SC2086]
     # shellcheck disable=SC2086
-    output="$($PING $tcp -q -c $COUNT -w $DEADLINE -s "$1" nextwurz.mooo.com 2>&1)"
+    output="$($PING $tcp $tls $doh -q -c $COUNT -w $DEADLINE -s "$1" nextwurz.mooo.com 2>&1)"
     # notice $output is quoted to preserve newlines
     temp=$(echo "$output"| awk '
         BEGIN           {pl=100; rtt=0.1}
@@ -55,10 +57,22 @@ fi
 resolverlist="$(grep -v ^\# dnsresolvers.list)"
 [ -z "$resolverlist" ] && exit 1
 for resolver in $resolverlist; do
-  if echo "$resolver"|grep -q 'T'; then
-    resolver="$(echo "$resolver"|cut -d "-" -f1)"
-    tcp="-T"
-  fi
+  case $(echo "$resolver"|grep '-'|cut -d "-" -f2) in
+    T)
+      tcp="-T" # DOCU: Use TCP as transport protocol
+      ;;
+    X)
+      tls="-X" # DOCU: Use TLS as transport protocol
+      ;;
+    H)
+      doh="-H" # DOCU: Use HTTPS as transport protocol
+      ;;
+    *)
+      ;;
+  esac
+  # remove special transport protocols from name/IP (if present):
+  # this works for ALL transport protocols!
+  resolver="$(echo "$resolver"|cut -d "-" -f1)"
   # create rrd-file from scratch if not existing:
   if ! [ -f data/dnsping_"${resolver}".rrd ]; then
     rrdtool create data/dnsping_"${resolver}".rrd \
