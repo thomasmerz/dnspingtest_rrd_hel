@@ -24,9 +24,9 @@ resolverlist="$(grep -v ^\# dnsresolvers.list)"
 [ -z "$resolverlist" ] && exit 1
 for resolver in $resolverlist; do
 
-  if echo "$resolver"|grep -q 'T'; then
-    resolver="$(echo "$resolver"|cut -d "-" -f1)"
-  fi
+  # remove special transport protocols from name/IP (if present):
+  # this works for ALL transport protocols!
+  resolver="$(echo "$resolver"|cut -d "-" -f1)"
 
   # create html-file from "template" if not existing:
   if [ ! -e "index_$resolver.html" ]; then
