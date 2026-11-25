@@ -58,10 +58,6 @@ These DNS resolvers are currently monitored:
 # 86.54.11.1 joindns4.eu Protective Resolution
 # 86.54.11.13 joindns4.eu Protective + Ad blocking
 # 86.54.11.100 joindns4.eu Unfiltered Resolution
-# https://dns01.eddns.eu/
-# dns01.eddns.eu: 135.181.207.105
-# dns02.eddns.de: 89.58.62.53
-# dns03.eddns.eu: 138.199.237.109
 # 185.222.222.222 https://dns.sb/
 # 45.11.45.11 https://dns.sb/
 ```
